@@ -12,6 +12,7 @@ func _ready():
 func _process(delta: float):
 	# VARIABLES
 	var velocity = Vector2()
+	var moveSpeed = 200
 
 	# ANIMATION CONTROL
 	if velocity.length() > 0:
@@ -30,13 +31,13 @@ func _process(delta: float):
 
 	# INPUT
 	if Input.is_action_pressed("move_right"):
-		velocity.x += 100
+		velocity.x += moveSpeed
 	if Input.is_action_pressed("move_left"):
-		velocity.x -= 100
+		velocity.x -= moveSpeed
 	if Input.is_action_pressed("move_down"):
-		velocity.y += 100
+		velocity.y += moveSpeed
 	if Input.is_action_pressed("move_up"):
-		velocity.y -= 100
+		velocity.y -= moveSpeed
 
 	# MOVEMENT
 	position += velocity * delta
